@@ -17,6 +17,7 @@ const Header = () => {
 
             {/* Menú en pantallas grandes */}
             <nav className="hidden md:flex space-x-20 text-gray-300 uppercase">
+                <a href="#" className="hover:text-white">Personaje</a>
                 <a href="#" className="hover:text-white">Habilidades</a>
                 <a href="#" className="hover:text-white">Mejores Jugadores</a>
             </nav>
