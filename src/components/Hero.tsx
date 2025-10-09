@@ -8,13 +8,13 @@ import { FaSquareXTwitter } from "react-icons/fa6";
 const Hero = () => {
     return (
         <div className="text-white font-sans w-full min-h-screen bg-[#1b252d]">
-            <div className="relative overflow-hidden w-full h-full p-4 md:p-6">
+            <div className="relative overflow-hidden w-full h-full p-4 md:px-20">
                 <div className="absolute inset-0 bg-[#1b252d] opacity-10"></div>
 
                 <div className="relative z-10">
                     <Header />
 
-                    <section className="flex flex-col md:flex-row items-center justify-between px-4 md:px-6 py-8 md:py-12 space-y-10 md:space-y-0">
+                    <section className="flex flex-col flex-col-reverse md:flex-row items-center justify-between px-4 md:px-6 py-8 md:py-12 space-y-10 md:-space-y-68">
                         {/* Columna izquierda */}
                         <div className="md:w-1/2 md:space-y-6 text-center md:text-left relative z-20 flex flex-col justify-center md:-translate-y-42">
                             <h1 className="text-4xl md:text-7xl font-extrabold">CHAMBER</h1>
@@ -37,19 +37,19 @@ const Hero = () => {
                         </div>
 
                         {/* Columna derecha */}
-                        <div className="md:w-1/2 flex justify-center items-center overflow-hidden h-[500px] md:h-[1050px]">
+                        <div className="md:w-1/3 flex justify-center items-center overflow-hidden h-[400px] md:h-[690px]">
                             <img
                                 src={Foto}
                                 alt="Chamber"
-                                className="w-4/5 md:w-3/4 object-top object-cover transform transition duration-500 ease-in-out hover:scale-105"
+                                className=" w-4/5 md:w-3/4 object-cover object-top"
                             />
 
                             {/* Íconos redes */}
-                            <div className="fixed right-6 top-1/2 transform -translate-y-1/2 flex flex-col gap-6 text-gray-400">
-                                <FaFacebookSquare className="w-6 h-6 hover:text-white transition" />
-                                <FaInstagramSquare className="w-6 h-6 hover:text-white transition" />
-                                <FaSquareXTwitter className="w-6 h-6 hover:text-white transition" />
-                            </div>
+<div className="hidden md:fixed md:right-6 md:top-1/2 md:transform md:-translate-y-1/2 md:flex md:flex-col md:gap-6 md:text-gray-400">
+    <FaFacebookSquare className="w-6 h-6 hover:text-white transition" />
+    <FaInstagramSquare className="w-6 h-6 hover:text-white transition" />
+    <FaSquareXTwitter className="w-6 h-6 hover:text-white transition" />
+</div>
                         </div>
                     </section>
                 </div>
