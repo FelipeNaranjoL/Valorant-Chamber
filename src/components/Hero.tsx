@@ -1,40 +1,60 @@
 import React from "react";
-import forest from "../assets/react.svg";
+import Foto from "../assets/Chamber.png";
+import Header from "./Header";
+import Centinela from "../assets/Logo/logoCentinela.webp";
+import { FaFacebookSquare, FaInstagramSquare } from "react-icons/fa";
+import { FaSquareXTwitter } from "react-icons/fa6";
 
 const Hero = () => {
     return (
-        <section
-            className="relative w-full h-screen bg-cover bg-center flex items-center"
-            style={{ backgroundImage: `url('${forest}')` }} // cambia por tu imagen
-        >
-            {/* Capa de oscurecimiento sutil */}
-            <div className="absolute inset-0 bg-black/30"></div>
+        <div className="text-white font-sans w-full min-h-screen bg-[#1b252d]">
+            <div className="relative overflow-hidden w-full h-full p-4 md:p-6">
+                <div className="absolute inset-0 bg-[#1b252d] opacity-10"></div>
 
-            {/* Contenedor del contenido */}
-            <div className="relative z-10 flex flex-col md:flex-row items-center justify-between w-full px-8 md:px-20 text-white">
+                <div className="relative z-10">
+                    <Header />
 
-                {/* Texto y descripción */}
-                <div className="max-w-lg">
-                    <h1 className="text-8xl font-extrabold tracking-tight text-white/80 leading-none">
-                        Chamber
-                    </h1>
-                    <p className="mt-6 text-lg text-gray-200 leading-relaxed">
-                        Chamber é um aventureiro lendário conhecido por seu domínio da magia e sua
-                        jornada em busca do equilíbrio entre o poder e a humanidade. Suas histórias
-                        ecoam nas florestas e reinos distantes.
-                    </p>
-                </div>
+                    <section className="flex flex-col md:flex-row items-center justify-between px-4 md:px-6 py-8 md:py-12 space-y-10 md:space-y-0">
+                        {/* Columna izquierda */}
+                        <div className="md:w-1/2 md:space-y-6 text-center md:text-left relative z-20 flex flex-col justify-center md:-translate-y-42">
+                            <h1 className="text-4xl md:text-7xl font-extrabold">CHAMBER</h1>
 
-                {/* Imagen del personaje */}
-                <div className="mt-10 md:mt-0">
-                    <img
-                        src={forest} // cambia por tu imagen del personaje
-                        alt="Chamber"
-                        className="max-h-[500px] drop-shadow-2xl object-contain"
-                    />
+                            <p className="text-lg md:text-xl text-gray-300 leading-relaxed">
+                                Bien vestido y bien armado, el diseñador de armas francés Chamber repele agresores con una precisión mortal. Aprovecha su arsenal personalizado para mantener a los enemigos a raya y eliminarlos desde lejos. Siempre cuenta con la contingencia perfecta para cada plan.
+                            </p>
+
+                            <div className="mt-8 md:mt-10">
+                                {/* Botón con logo dentro */}
+                                <button className="mt-4 flex items-center justify-center gap-3 w-full md:w-1/3 bg-red-600 text-white px-5 py-2 rounded-full font-bold hover:bg-red-900 transition duration-300 ease-in-out">
+                                    <img
+                                        src={Centinela}
+                                        alt="Logo Centinela"
+                                        className="w-6 h-6 object-contain"
+                                    />
+                                    <span>Centinela</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        {/* Columna derecha */}
+                        <div className="md:w-1/2 flex justify-center items-center overflow-hidden h-[500px] md:h-[750px]">
+                            <img
+                                src={Foto}
+                                alt="Chamber"
+                                className="w-4/5 md:w-3/4 object-top object-cover transform transition duration-500 ease-in-out hover:scale-105"
+                            />
+
+                            {/* Íconos redes */}
+                            <div className="fixed right-6 top-1/2 transform -translate-y-1/2 flex flex-col gap-6 text-gray-400">
+                                <FaFacebookSquare className="w-6 h-6 hover:text-white transition" />
+                                <FaInstagramSquare className="w-6 h-6 hover:text-white transition" />
+                                <FaSquareXTwitter className="w-6 h-6 hover:text-white transition" />
+                            </div>
+                        </div>
+                    </section>
                 </div>
             </div>
-        </section>
+        </div>
     );
 };
 
