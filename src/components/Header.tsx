@@ -62,6 +62,16 @@ const Header = () => {
                         >
                             Mejores Jugadores
                         </motion.a>
+                                                <motion.a
+                            href="#"
+                            className="hover:text-white"
+                            onClick={toggleMenu}
+                            initial={{ y: -10, opacity: 0 }}
+                            animate={{ y: 0, opacity: 1 }}
+                            transition={{ delay: 0.2 }}
+                        >
+                            Personaje
+                        </motion.a>
                     </motion.div>
                 )}
             </AnimatePresence>
