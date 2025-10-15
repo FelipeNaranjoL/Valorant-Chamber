@@ -34,3 +34,130 @@
   pointer-events: none;
 }
 
+/* =============================
+   🧠 HABILIDADES — ESTILOS EXTRA
+   ============================= */
+
+/* Animación de "respirar" para los botones */
+@keyframes breathe {
+  0%, 100% {
+    transform: scale(1);
+    filter: brightness(1);
+  }
+  50% {
+    transform: scale(1.1);
+    filter: brightness(1.15);
+  }
+}
+
+/* Aplica la animación al hacer hover */
+.hover\:animate-breathe:hover {
+  animation: breathe 1.2s ease-in-out infinite;
+}
+
+/* Landscape con poca altura (móviles acostados): 
+   separar más columnas y forzar que descripción quede debajo del video */
+@media (orientation: landscape) and (max-height: 480px) {
+  .habilidades {
+    grid-template-columns: 1fr 1fr;   /* dos columnas */
+    column-gap: 3rem;                /* más separación entre columnas */
+    row-gap: 1rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    align-items: start;
+  }
+
+  .left-col h1 {
+    font-size: 2rem;                 /* ~32px */
+    line-height: 1.1;
+  }
+
+  .ability-btn {
+    width: 2.75rem;
+    height: 2.75rem;                 /* botones más compactos */
+  }
+
+  /* Agrupamos video + descripción en la misma columna (derecha) */
+  .right-col {
+    grid-column: 2 / 3;
+    align-items: flex-start;         /* alinear a la izquierda */
+  }
+
+  .right-col .player {
+    width: 90vw;                     /* si se sale del contenedor, usa 90vw */
+    max-width: 320px;
+    max-height: 56vh;                /* evita que tape botones */
+  }
+
+  .right-col .desc {
+    width: 90vw;
+    max-width: 320px;
+    margin-top: 0.75rem;
+    text-align: left;                /* empieza donde inicia el video */
+    min-height: 96px;                /* amortigua saltos entre Q/W/E/R */
+  }
+
+  .right-col .desc h3 {
+    font-size: 1rem;
+  }
+
+  .right-col .desc p {
+    font-size: 0.875rem;
+    line-height: 1.35;
+  }
+}
+
+
+/* =============================
+   🎯 PERSONAJE — ESTILOS EXTRA
+   ============================= */
+
+/* Casos típicos de móvil en horizontal: poca altura */
+@media (orientation: landscape) and (max-height: 480px) {
+  .personaje {
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 1rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+
+  .personaje h1 {
+    font-size: 2rem;        /* ~32px en landscape bajo */
+    line-height: 1.1;
+  }
+
+  .personaje p {
+    font-size: 0.95rem;     /* texto más compacto */
+    line-height: 1.4;
+    margin-top: 0.5rem;
+  }
+
+  .personaje button {
+    width: 60%;
+    margin-top: 0.75rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+  }
+
+  .personaje img {
+    max-height: 100vh;      /* evita que la imagen invada el texto */
+    width: 45vw;            /* ocupa ~45% del ancho */
+  }
+}
+
+/* Landscape un poco más alto (p.ej. tablets pequeñas) */
+@media (orientation: landscape) and (min-height: 481px) and (max-width: 1024px) {
+  .personaje h1 {
+    font-size: 2.5rem;      /* entre 40–44px aprox */
+  }
+
+  .personaje p {
+    font-size: 1rem;
+  }
+
+  .personaje img {
+    max-height: 70vh;
+    width: 50vw;
+  }
+}
